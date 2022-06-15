@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/views/apps/semaphore/index.html`))
 })
 
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/views/dashboard/index.html`))
+})
+
 app.get('/styles.css', (req, res) => {
   res.sendFile(path.join(`${__dirname}/views/apps/semaphore/styles.css`))
 })
