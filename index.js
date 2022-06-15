@@ -12,11 +12,11 @@ const port = 3003
 let socketInstance
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/semaphore/index.html`))
+  res.sendFile(path.join(`${__dirname}/views/apps/semaphore/index.html`))
 })
 
 app.get('/styles.css', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/semaphore/styles.css`))
+  res.sendFile(path.join(`${__dirname}/views/apps/semaphore/styles.css`))
 })
 
 app.post('/message', (req, res) => {
