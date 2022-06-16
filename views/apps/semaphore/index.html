@@ -20,6 +20,10 @@
     socket.on('semaphore', () => {
       toggleSemaphore()
     })
+
+    socket.on('reload', () => {
+      window.location.reload()
+    })
   </script>
 
   <body>

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/redradix/ris-pantalla-interactiva#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "express-dynamic-static": "^1.0.5",
     "socket.io": "^4.5.1"
   }
 }

@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
-  <script src="/socket.io/socket.io.js"></script>
-
   <script>
-    const socket = io()
-
     function test() {
       fetch('/message', {
         method: 'POST',
@@ -23,9 +20,24 @@
         },
       })
     }
+
+    let activeApp
+
+    function updateApp() {
+      fetch('/update-app', {
+        method: 'POST',
+        body: JSON.stringify({
+          app: 'semaphone',
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    }
   </script>
 
   <body>
     <button onclick="test()">Toggle semaphore</button>
+    <button onclick="updateApp()">Toggle semaphore</button>
   </body>
 </html>

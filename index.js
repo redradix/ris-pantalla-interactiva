@@ -5,22 +5,37 @@ const app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 
+const dynamicStatic = require('express-dynamic-static')()
+
 app.use(express.json())
+app.use(dynamicStatic)
 
 const port = 3003
 
 let socketInstance
+let activeApp
+
+app.use('/dashboard', express.static(path.join(`${__dirname}/views/dashboard`)))
+
+app.use('/', (req, res, next) => {
+  // TODO: refactor
+  if (activeApp) {
+    dynamicStatic.setPath(path.join(`${__dirname}/views/apps/semaphore`))
+  } else {
+    dynamicStatic.setPath(path.join(`${__dirname}/views/welcome`))
+  }
+
+  next()
+})
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/apps/semaphore/index.html`))
+  const route = activeApp ? `/views/apps/${activeApp}` : '/views/welcome'
+
+  res.sendFile(path.join(`${__dirname}${route}/index.html`))
 })
 
 app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(`${__dirname}/views/dashboard/index.html`))
-})
-
-app.get('/styles.css', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/apps/semaphore/styles.css`))
 })
 
 app.post('/message', (req, res) => {
@@ -30,8 +45,16 @@ app.post('/message', (req, res) => {
   res.end()
 })
 
+app.post('/update-app', (req, res) => {
+  activeApp = activeApp ? null : req.body.app
+  socketInstance.emit('reload')
+  res.end()
+})
+
 io.of('/admin').on('connection', function (socket) {
   socketInstance = socket
+
+  //TODO: add on disconnect
 })
 
 http.listen(port, () => {
