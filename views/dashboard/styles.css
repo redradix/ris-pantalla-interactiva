@@ -1,3 +1,21 @@
 * {
   outline: 2px solid red;
 }
+
+.hidden {
+  display: none;
+}
+
+.dashboard {
+}
+
+.config {
+}
+
+.toggle {
+  border: 2px solid green;
+}
+
+.toggle.active {
+  border: 2px solid red;
+}

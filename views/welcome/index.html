@@ -13,8 +13,8 @@
     <script>
       const socket = io('/admin')
   
-      socket.on('reload', () => {
-        window.location.reload()
+      socket.on('reload', (url) => {
+        window.location.href = url
       })
     </script>
 

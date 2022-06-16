@@ -19,25 +19,38 @@
           'Content-Type': 'application/json',
         },
       })
+      document.querySelector('.toggle').classList.toggle('active')
     }
 
     let activeApp
 
     function updateApp() {
+      activeApp = activeApp ? null : 'semaphore'
+
       fetch('/update-app', {
         method: 'POST',
         body: JSON.stringify({
-          app: 'semaphone',
+          app: activeApp,
         }),
         headers: {
           'Content-Type': 'application/json',
         },
       })
+
+      document.querySelector('.dashboard').classList.toggle('hidden')
+      document.querySelector('.config').classList.toggle('hidden')
+      
     }
   </script>
 
   <body>
-    <button onclick="test()">Toggle semaphore</button>
-    <button onclick="updateApp()">Toggle semaphore</button>
+    <div class="dashboard">
+      <button onclick="updateApp()">Semaphore</button>
+    </div>
+    
+    <div class="config hidden">
+      <button onclick="updateApp()">Volver</button>
+      <button class="toggle" onclick="test()">Toggle</button>
+    </div>
   </body>
 </html>
