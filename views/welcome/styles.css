@@ -1,3 +1,4 @@
-* {
-  outline: 2px solid green;
+.content {
+  background-image: url('./assets/bg-empty.svg');
+  background-size: cover;
 }
