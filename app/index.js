@@ -5,9 +5,9 @@ const app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 
-app.use(express.json())
+const PORT = 3003
 
-const port = 3003
+app.use(express.json())
 
 app.use('/', express.static(path.join(`${__dirname}/views/welcome`)))
 app.use('/dashboard', express.static(path.join(`${__dirname}/views/dashboard`)))
@@ -60,6 +60,6 @@ io.on('connection', function (socket) {
   })
 })
 
-http.listen(port, () => {
-  console.log(`ferm|n listening on port ${port}`)
+http.listen(PORT, () => {
+  console.log(`ferm|n listening on port ${PORT}`)
 })
