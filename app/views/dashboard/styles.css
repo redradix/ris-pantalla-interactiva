@@ -10,6 +10,7 @@
 /* end font */
 body {
   font-family: 'JakartaSans';
+  margin: 0;
 }
 .hidden {
   display: none;
@@ -22,11 +23,13 @@ body {
   min-height: 100vh;
 }
 .navbar {
-  background-color: tomato;
+  background-color: #481ba5;
 }
 
 .navbar-brand {
+  display: block;
   max-width: 120px;
+  padding: 12px 24px;
 }
 
 .navbar-brand img {
@@ -67,6 +70,31 @@ body {
 .config {
   background-color: #ecf0f3;
   min-height: calc(100vh - 59px);
+}
+
+/* Apps */
+.dashboard-btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 48px;
+  row-gap: 48px;
+}
+
+.btn-app {
+  display: block;
+  padding: 16px;
+  background: rgb(255, 255, 255);
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 0.574074px 9.18519px rgba(0, 0, 0, 0.1),
+    2.2963px 2.2963px 6.88889px rgba(0, 0, 0, 0.1),
+    -13.7778px -13.7778px 27.5556px rgba(255, 255, 255, 0.1),
+    6.88889px 6.88889px 13.7778px rgba(0, 0, 0, 0.24),
+    11.4815px 11.4815px 22.963px rgba(0, 0, 0, 0.1);
+  border-radius: 48px;
+  border: none;
+
+  cursor: pointer;
 }
 
 /* toggle  */
