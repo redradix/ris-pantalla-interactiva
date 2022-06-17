@@ -27,7 +27,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(`${__dirname}${route}/index.html`))
+  res.sendFile(path.join(`${__dirname}/index.html`))
 })
 
 app.get('/dashboard', (req, res) => {
