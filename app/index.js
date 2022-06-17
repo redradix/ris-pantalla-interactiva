@@ -58,8 +58,6 @@ io.on('connection', function (socket) {
   socket.on('semaphore-updated', isBusy => {
     io.to('ferm|n').emit('semaphore-updated', isBusy)
   })
-
-  //TODO: add on disconnect
 })
 
 http.listen(port, () => {
