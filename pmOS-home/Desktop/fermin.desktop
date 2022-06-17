@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Fermin
+Name[es]=Fermín
+Comment=An interactive app playground
+Comment[es]=Un entorno de aplicaciones interactivas
+#Keywords=Internet;WWW;Browser;Web;Explorer
+#Keywords[es]=Explorador;Internet;WWW
+Exec=/home/fermin/.local/bin/fermin-ask.sh %u
+#Icon=firefox
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupNotify=true
+StartupWMClass=fermin
+#Categories=Network;WebBrowser;
