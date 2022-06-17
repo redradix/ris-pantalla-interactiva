@@ -1,9 +1,11 @@
 const express = require('express')
+const http = require('http')
+const socket = require('socket.io')
 const path = require('path')
 
 const app = express()
-const http = require('http').Server(app)
-const io = require('socket.io')(http)
+const server = http.Server(app)
+const io = socket(server)
 
 const PORT = 3003
 
@@ -60,6 +62,6 @@ io.on('connection', function (socket) {
   })
 })
 
-http.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`ferm|n listening on port ${PORT}`)
 })
