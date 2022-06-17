@@ -48,7 +48,7 @@ io.on('connection', function (socket) {
   })
 
   socket.on('change-app', ({ app }) => {
-    io.to('ferm|n').emit('update', `/${app ?? ''}`)
+    io.to('ferm|n').emit('update', `/${app != null ? app : ''}`)
   })
 
   socket.on('semaphore-updated', isBusy => {
