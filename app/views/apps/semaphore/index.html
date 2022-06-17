@@ -25,6 +25,7 @@
 
       socket.on('semaphore', () => {
         toggleSemaphore()
+        document.getElementById('semaphore').classList.toggle('busy')
       })
 
       socket.on('update', url => {
