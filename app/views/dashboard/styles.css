@@ -22,9 +22,6 @@ body {
   background-position: bottom center;
   min-height: 100vh;
 }
-.navbar {
-  background-color: #481ba5;
-}
 
 .navbar-brand {
   display: block;
@@ -51,20 +48,37 @@ body {
   justify-content: start;
   padding: 24px 48px 72px;
   gap: 56px;
-  width: 528px;
-  height: 390px;
+  width: fit-content;
+  height: fit-content;
   background: rgba(236, 240, 243, 0.2);
   box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3),
     2px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 24px;
 }
 .dashboard-content-title {
-  font-size: 24px;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
   margin-bottom: 24px;
+  margin-top: 0;
 }
 .dashboard.hidden {
   display: none;
+}
+
+.dashboard-content small {
+  font-family: 'JakartaSans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 150%;
+
+  color: #f8f9fa;
+}
+
+.config {
+  background-color: #ecf0f3;
+  min-height: calc(100vh - 59px);
 }
 
 /* Apps */
@@ -78,7 +92,12 @@ body {
 
 .btn-app {
   display: block;
-  padding: 16px;
+  padding: 14px 48px;
+  width: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: rgba(255, 255, 255, 0.12);
   mix-blend-mode: normal;
@@ -89,6 +108,14 @@ body {
     11.4815px 11.4815px 22.963px rgba(0, 0, 0, 0.1);
   border-radius: 48px;
   border: none;
+
+  color: #fff;
+
+  font-family: 'JakartaSans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
 
   cursor: pointer;
 }
