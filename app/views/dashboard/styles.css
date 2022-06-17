@@ -67,11 +67,6 @@ body {
   display: none;
 }
 
-.config {
-  background-color: #ecf0f3;
-  min-height: calc(100vh - 59px);
-}
-
 /* Apps */
 .dashboard-btns {
   display: flex;
@@ -116,6 +111,7 @@ body {
   flex-grow: 0;
   border: 0;
   position: relative;
+  cursor: pointer;
 }
 
 .btn-toggle::after {
@@ -150,6 +146,12 @@ body {
   background-color: white;
 }
 
+/* end toggle  */
+.config {
+  background-color: #ecf0f3;
+  min-height: calc(100vh - 61px);
+}
+
 .config-container {
   max-width: 1300px;
   width: 90%;
@@ -157,9 +159,31 @@ body {
 }
 .config-content {
   display: flex;
-
   height: 70vh;
   align-items: center;
   justify-content: center;
 }
-/* end toggle  */
+.config-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.config-header .btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  transition: all 200ms linear;
+}
+.config-header .btn:hover {
+  transition: all 200ms linear;
+  left: -3px;
+}
+.config-header .btn img {
+  width: 100%;
+}

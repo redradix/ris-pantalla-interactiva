@@ -49,80 +49,105 @@
       }
     </script>
 
-<div class="view-dashboard">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/logo.svg" alt="logo" />
-      </a>
-    </div>
-  </nav>
+    <div class="view-dashboard">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/logo.svg" alt="logo" />
+          </a>
+        </div>
+      </nav>
 
-  <div class="dashboard">
-    <div class="dashboard-header">
-      <h1>Hola, empieza a hacer cosicas...</h1>
-    </div>
-    <div class="dashboard-content">
-      <div>
-        <h3 class="dashboard-content-title">Listado de cosicas</h3>
-        <small>Nuestras cosicas monas</small>
+      <div class="dashboard">
+        <div class="dashboard-header">
+          <h1>Hola, empieza a hacer cosicas...</h1>
+        </div>
+        <div class="dashboard-content">
+          <div>
+            <h3 class="dashboard-content-title">Listado de cosicas</h3>
+            <small>Nuestras cosicas monas</small>
+          </div>
+          <div class="dashboard-btns">
+            <button
+              class="btn btn-primary btn-app"
+              onclick="updateApp('semaphore')"
+            >
+              Semaphore
+            </button>
+            <button
+              class="btn btn-primary btn-app"
+              onclick="updateApp('pomodoro')"
+            >
+              Pomodoro
+            </button>
+            <button
+              class="btn btn-primary btn-app"
+              onclick="updateApp('calendar')"
+            >
+              Calendar
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="dashboard-btns">
-        <button class="btn btn-primary btn-app" onclick="updateApp('semaphore')">
-          Semaphore
-        </button>
-        <button class="btn btn-primary btn-app" onclick="updateApp('pomodoro')">
-          Pomodoro
-        </button>
-        <button class="btn btn-primary btn-app" onclick="updateApp('calendar')">
-          Calendar
-        </button>
-      </div>
-    </div>
-  </div>
 
-  <div class="config semaphore hidden">
-    <div class="config-container">
-      <div class="config-header">
-        <h1>Mi aplicación tó guapa</h1>
-        <h3>Configuración</h3>
-        <button class="btn" onclick="updateApp()">
-          <img src="./assets/ic_round-arrow-back.svg" alt="back-btn">
-        </button>
+      <div class="config semaphore hidden">
+        <div class="config-container">
+          <div class="config-header">
+            <button class="btn" onclick="updateApp()">
+              <img src="./assets/ic_round-arrow-back.svg" alt="back-btn" />
+            </button>
+            <h1>Mi aplicación tó guapa -> DnD</h1>
+          </div>
+
+          <div class="config-content">
+            <button
+              class="btn-toggle toggle"
+              onclick="toggleSemaphore()"
+            ></button>
+          </div>
+        </div>
       </div>
 
-      <div class="config-content">
-          <button class="btn-toggle toggle active" onclick="toggleSemaphore()"></button>
+      <div class="config pomodoro hidden">
+        <div class="config-container">
+          <div class="config-header">
+            <button class="btn" onclick="updateApp()">
+              <img src="./assets/ic_round-arrow-back.svg" alt="back-btn" />
+            </button>
+            <h1>Mi aplicación tó guapa -> Pomodoro</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="config calendar hidden">
+        <div class="config-container">
+          <div class="config-header">
+            <button class="btn" onclick="updateApp()">
+              <img src="./assets/ic_round-arrow-back.svg" alt="back-btn" />
+            </button>
+            <h1>Mi aplicación tó guapa -> Calendar</h1>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="config pomodoro hidden">
-    <div class="config-container">
-      <div class="config-header">
-        <h1>Mi aplicación tó guapa</h1>
-        <h3>Configuración</h3>
-        <button class="btn" onclick="updateApp()">
-          <img src="./assets/ic_round-arrow-back.svg" alt="back-btn">
-        </button>
-      </div>>
-      </div>
-    </div>
-  </div>
+    <!-- <div class="dashboard">
+      <button onclick="updateApp('semaphore')">Semaphore</button>
+      <button onclick="updateApp('pomodoro')">Pomodoro</button>
+      <button onclick="updateApp('calendar')">Calendar</button>
+    </div> -->
 
-  <div class="config calendar hidden">
-    <div class="config-container">
-      <div class="config-header">
-        <h1>Mi aplicación tó guapa</h1>
-        <h3>Configuración</h3>
-        <button class="btn" onclick="updateApp()">
-          <img src="./assets/ic_round-arrow-back.svg" alt="back-btn">
-        </button>
-      </div>>
-      </div>
+    <!-- <div class="config semaphore hidden">
+      <button onclick="updateApp()">Volver</button>
+      <button class="toggle active" onclick="toggleSemaphore()">Toggle</button>
     </div>
-  </div>
-</div>
+
+    <div class="config pomodoro hidden">
+      <button onclick="updateApp()">Volver</button>
+    </div>
+
+    <div class="config calendar hidden">
+      <button onclick="updateApp()">Volver</button>
+    </div> -->
   </body>
 </html>
