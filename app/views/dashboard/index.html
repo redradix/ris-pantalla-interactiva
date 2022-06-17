@@ -37,11 +37,15 @@
 
         document.querySelector('.dashboard').classList.toggle('hidden')
 
-        Array.from(document.querySelectorAll('.config')).forEach(element => element.classList.add('hidden'))
+        Array.from(document.querySelectorAll('.config')).forEach(element =>
+          element.classList.add('hidden'),
+        )
 
         if (activeApp) {
-          document.querySelector(`.config.${activeApp}`).classList.remove('hidden')
-        } 
+          document
+            .querySelector(`.config.${activeApp}`)
+            .classList.remove('hidden')
+        }
       }
     </script>
 
