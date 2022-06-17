@@ -11,12 +11,13 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
-      const socket = io('/admin')
+      const socket = io()
 
-      socket.on('reload', url => {
+      socket.on('update', url => {
         window.location.href = url
       })
     </script>
+
     <div class="content">
       <img src="./assets/logo.svg" />
     </div>

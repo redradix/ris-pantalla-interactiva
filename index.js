@@ -9,9 +9,6 @@ app.use(express.json())
 
 const port = 3003
 
-let socketInstance
-let activeApp
-
 app.use('/', express.static(path.join(`${__dirname}/views/welcome`)))
 app.use('/dashboard', express.static(path.join(`${__dirname}/views/dashboard`)))
 app.use(
@@ -31,21 +28,20 @@ app.get('/semaphore', (req, res) => {
   res.sendFile(path.join(`${__dirname}/views/apps/semaphore/index.html`))
 })
 
-app.post('/message', (req, res) => {
-  if (socketInstance) {
-    socketInstance.emit(req.body.event, req.body.message)
-  }
-  res.end()
-})
+io.on('connection', function (socket) {
+  socket.join('ferm|n')
 
-app.post('/update-app', (req, res) => {
-  activeApp = activeApp ? null : req.body.app
-  socketInstance.emit('reload', activeApp || '/')
-  res.end()
-})
+  socket.on('message', ({ event }) => {
+    io.to('ferm|n').emit(event)
+  })
 
-io.of('/admin').on('connection', function (socket) {
-  socketInstance = socket
+  socket.on('change-app', ({ app }) => {
+    io.to('ferm|n').emit('update', `/${app ?? ''}`)
+  })
+
+  socket.on('semaphore-updated', isBusy => {
+    io.to('ferm|n').emit('semaphore-updated', isBusy)
+  })
 
   //TODO: add on disconnect
 })

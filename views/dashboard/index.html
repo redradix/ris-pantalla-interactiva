@@ -8,49 +8,45 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
-  <script>
-    function test() {
-      fetch('/message', {
-        method: 'POST',
-        body: JSON.stringify({
-          event: 'semaphore',
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      document.querySelector('.toggle').classList.toggle('active')
-    }
-
-    let activeApp
-
-    function updateApp() {
-      activeApp = activeApp ? null : 'semaphore'
-
-      fetch('/update-app', {
-        method: 'POST',
-        body: JSON.stringify({
-          app: activeApp,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-
-      document.querySelector('.dashboard').classList.toggle('hidden')
-      document.querySelector('.config').classList.toggle('hidden')
-      
-    }
-  </script>
-
   <body>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      const socket = io()
+
+      socket.on('semaphore-updated', isBusy => {
+        if (isBusy) {
+          document.querySelector('.toggle').classList.add('active')
+        } else {
+          document.querySelector('.toggle').classList.remove('active')
+        }
+      })
+
+      function toggleSemaphore() {
+        socket.emit('message', {
+          event: 'semaphore',
+        })
+
+        document.querySelector('.toggle').classList.toggle('active')
+      }
+
+      function updateApp(activeApp) {
+        socket.emit('change-app', {
+          app: activeApp,
+        })
+
+        document.querySelector('.dashboard').classList.toggle('hidden')
+        document.querySelector('.config').classList.toggle('hidden')
+      }
+    </script>
+
     <div class="dashboard">
-      <button onclick="updateApp()">Semaphore</button>
+      <button onclick="updateApp('semaphore')">Semaphore</button>
     </div>
-    
+
     <div class="config hidden">
       <button onclick="updateApp()">Volver</button>
-      <button class="toggle" onclick="test()">Toggle</button>
+      <button class="toggle active" onclick="toggleSemaphore()">Toggle</button>
     </div>
   </body>
 </html>
