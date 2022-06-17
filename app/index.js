@@ -15,6 +15,14 @@ app.use(
   '/semaphore',
   express.static(path.join(`${__dirname}/views/apps/semaphore`)),
 )
+app.use(
+  '/pomodoro',
+  express.static(path.join(`${__dirname}/views/apps/pomodoro`)),
+)
+app.use(
+  '/calendar',
+  express.static(path.join(`${__dirname}/views/apps/calendar`)),
+)
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}${route}/index.html`))
@@ -26,6 +34,14 @@ app.get('/dashboard', (req, res) => {
 
 app.get('/semaphore', (req, res) => {
   res.sendFile(path.join(`${__dirname}/views/apps/semaphore/index.html`))
+})
+
+app.get('/pomodoro', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/views/apps/pomodoro/index.html`))
+})
+
+app.get('/calendar', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/views/apps/calendar/index.html`))
 })
 
 io.on('connection', function (socket) {

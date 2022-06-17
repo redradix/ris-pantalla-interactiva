@@ -176,14 +176,7 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
-express-dynamic-static@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/express-dynamic-static/-/express-dynamic-static-1.0.5.tgz#8e8ab6b77635034154c34a51245da74ede37b277"
-  integrity sha512-O2XBL5IlW23PYHIWno1Daz2TQZ7DtSljl9M2Ht1LTaqB10U1u8wr7ERVJijX8N+oyHlq4WnSk9RsuOYelnb6DQ==
-  dependencies:
-    express "^4.15.3"
-
-express@^4.15.3, express@^4.18.1:
+express@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.18.1.tgz#7797de8b9c72c857b9cd0e14a5eea80666267caf"
   integrity sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q==
