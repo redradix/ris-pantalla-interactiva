@@ -1,6 +1,6 @@
 # ferm|n
 
-ferm|in (pronunciado /fermín/) es un entorno de aplicaciones interactivas personalizables, diseñadas para ser mostradas en una pantalla remota. Podemos diferenciar tres partes básicas:
+ferm|n (pronunciado /fermín/) es un entorno de aplicaciones interactivas personalizables, diseñadas para ser mostradas en una pantalla remota. Podemos diferenciar tres partes básicas:
 
 * *Dashboard de administrador*: Se despliega en el equipo desde el que se controlará la aplicación a mostrar en la pantalla remota y su configuración.
 
