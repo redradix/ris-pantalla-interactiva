@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ferm|n Pomodoro</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="/socket.io/socket.io.js"></script>
   </head>
+  <script>
+    const socket = io()
 
+    socket.on('update', url => {
+      window.location.href = url
+    })
+  </script>
   <body>
     <iframe src="http://www.redradix.com/" />
   </body>
