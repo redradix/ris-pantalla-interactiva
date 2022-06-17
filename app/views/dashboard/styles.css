@@ -1,21 +1,136 @@
-* {
-  outline: 2px solid red;
+/* font */
+@font-face {
+  font-family: 'JakartaSans';
+  src: url('./assets/fonts/PlusJakartaSans-Regular.ttf') format('truetype'),
+    /* Safari, Android 2.2+, iOS */
+      url('./assetsassets/fonts/PlusJakartaSans-Regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+ */
+      url('./assets/fonts/PlusJakartaSans-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-
+/* end font */
+body {
+  font-family: 'JakartaSans';
+}
 .hidden {
   display: none;
 }
 
+.view-dashboard {
+  background-image: url('./assets/bg-empty.svg');
+  background-size: cover;
+  background-position: bottom center;
+  min-height: 100vh;
+}
+.navbar {
+  background-color: tomato;
+}
+
+.navbar-brand {
+  max-width: 120px;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+}
+
 .dashboard {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  color: white;
+}
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 24px 48px 72px;
+  gap: 56px;
+  width: 528px;
+  height: 390px;
+  background: rgba(236, 240, 243, 0.2);
+  box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+}
+.dashboard-content-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.dashboard.hidden {
+  display: none;
 }
 
 .config {
+  background-color: #ecf0f3;
+  min-height: calc(100vh - 59px);
 }
 
-.toggle {
-  border: 2px solid green;
+/* toggle  */
+.btn-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2px;
+  gap: 4px;
+  width: 260px;
+  height: 105px;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: inset -2px -2px 4px rgb(255 255 255 / 88%),
+    inset 4px 4px 8px rgb(0 0 0 / 25%);
+  border-radius: 112px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: 0;
+  position: relative;
 }
 
-.toggle.active {
-  border: 2px solid red;
+.btn-toggle::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 0%;
+  right: 100%;
+  top: 50%;
+  transform: translate(20%, -50%);
+  background: #6c757d;
+  box-shadow: 0.5px 1px 1.5px rgb(0 0 0 / 80%);
+  border-radius: 105px;
+  transition: all 200ms linear;
 }
+
+.btn-toggle:hover::after {
+  background: #0dcaf0;
+}
+
+.btn-toggle.active {
+  transition: all 200ms linear;
+  background-color: #6c757d;
+}
+
+.btn-toggle.active::after {
+  left: 100%;
+  transition: all 200ms linear;
+  transform: translate(-120%, -50%);
+  background-color: white;
+}
+
+.config-container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+}
+.config-content {
+  display: flex;
+
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+}
+/* end toggle  */
