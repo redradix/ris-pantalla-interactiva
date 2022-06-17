@@ -13,7 +13,7 @@ xset -dpms
 
 TARGET_URL=$(
 	/usr/bin/yad \
-		--title="Fermin" \
+		--title="ferm|n" \
 		--text="Introduce la URL del servidor:" \
 		--entry \
 		--entry-text="http://192.168.0.58:3003" \
@@ -29,7 +29,7 @@ then
 		$TARGET_URL
 else
 	/usr/bin/yad \
-		--title="Fermin" \
+		--title="ferm|n" \
 		--text="Debes introducir una URL" \
 		--no-buttons
 fi
