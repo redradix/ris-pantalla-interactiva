@@ -34,16 +34,10 @@ app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(`${__dirname}/views/dashboard/index.html`))
 })
 
-app.get('/semaphore', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/apps/semaphore/index.html`))
-})
-
-app.get('/pomodoro', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/apps/pomodoro/index.html`))
-})
-
-app.get('/calendar', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/views/apps/calendar/index.html`))
+app.get('/:appName', (req, res) => {
+  res.sendFile(
+    path.join(`${__dirname}/views/apps/${req.params.appName}/index.html`),
+  )
 })
 
 io.on('connection', function (socket) {
