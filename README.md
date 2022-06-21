@@ -2,11 +2,13 @@
 
 ferm|n (pronunciado /fermín/) es un entorno de aplicaciones interactivas personalizables, diseñadas para ser mostradas en una pantalla remota. Podemos diferenciar tres partes básicas:
 
-* *Dashboard de administrador*: Se despliega en el equipo desde el que se controlará la aplicación a mostrar en la pantalla remota y su configuración.
+* *Dashboard de administrador*: Es la interfaz web desde la que se selecciona la aplicación a mostrar en la pantalla remota y se controla su configuración. Dependiendo de la aplicación, también se puede interactuar con ella.
 
-* *Aplicaciones cliente*: Es el conjunto de aplicaciones que se mostrarán en la pantalla remota. Cualquier usuario puede crear sus propias aplicaciones.
+* *Visor* o *cliente*: Es la interfaz web que se muestra en la pantalla remota. Cuando hay una aplicación seleccionada desde el _dashboard_, la mostrará y permitirá interactuar con ella.
 
-* *Servidor web*: Sirve tanto la parte de administración como las aplicaciones cliente. También se encarga de la comunicación entre ellas para desde el dashboard pueda cambiarse la aplicación a mostrar en la pantalla remota e interactuar con ella.
+* *Servidor web*: Sirve tanto la parte de administración como el visor y las aplicaciones en cada momento. También se encarga de la comunicación entre ellas para que desde el _dashboard_ pueda cambiarse la aplicación a mostrar en la pantalla remota e interactuar con ella. En función de tu preferencia, el servidor puede embeberse en la pantalla remota o arrancarse en tu equipo.
+
+Cualquier usuario puede crear sus propias aplicaciones.
 
 ## Preparación
 
