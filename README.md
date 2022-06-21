@@ -19,3 +19,22 @@ Si quieres ayudarnos a reducir la basura electrónica, busca si tienes un dispos
 La otra opción es utilizar un _single-board computer_ (SBC) con antena wifi y pantalla táctil. En la fase de prototipado hemos utilizado una Raspberry Pi 1 B+ con la Raspberry Pi Touch Display y un adaptador WiFi por USB.
 
 [Continuará]
+
+## Licencia
+
+Todas las partes de ferm|n son software libre mediante la [licencia LGPL v3](COPYING).
+
+    Copyright (C) 2022  Redradix
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  [See the
+    GNU Lesser General Public License](COPYING) for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
