@@ -15,10 +15,10 @@ Cualquier usuario puede crear sus propias aplicaciones.
 Primero tienes que elegir soporte donde mostrar las aplicaciones cliente.
 
 Si quieres ayudarnos a reducir la basura electrónica, busca si tienes un dispositivo compatible con [postmarketOS](https://wiki.postmarketos.org/wiki/Devices). En este momento, postmarketOS es para entusiastas de Linux, así que será un poco más difícil y necesitarás un ordenador Linux para instalarlo. El dispositivo tiene que tener soporte, como mínimo, de `USB Networking`, `Flashing`, `Touchscreen`, `Display` y `WiFi`. Idealmente tendría `3D Acceleration` para mejorar el rendimiento gráfico y evitar artefactos visuales. En la fase de prototipado hemos utilizado una [Nexus 7 (2012)](https://wiki.postmarketos.org/wiki/Google_Nexus_7_2012_(asus-grouper)).
+[Guía de instalación en desarrollo].
 
-La otra opción es utilizar un _single-board computer_ (SBC) con antena wifi y pantalla táctil. En la fase de prototipado hemos utilizado una Raspberry Pi 1 B+ con la Raspberry Pi Touch Display y un adaptador WiFi por USB.
-
-[Continuará]
+La otra opción es utilizar un _single-board computer_ (SBC) con antena wifi y pantalla táctil. En la fase de prototipado hemos utilizado una Raspberry Pi 3 B+ con la pantalla Raspberry Pi Touch Display.
+[Sigue la guía para instalar ferm|n en una raspi](RPiOS.README.md).
 
 ## Licencia
 
