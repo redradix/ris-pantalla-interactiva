@@ -1,0 +1,9 @@
+
+# start ferm|n server and kiosk on auto-login
+## NOTE comand tty outputs /dev/tty1 on VT and /dev/pts/0 on SSH
+## NOTE environment variable SSH_TTY is not set on VT but its set on SSH
+if [ -z "${DISPLAY}" ] && [ -z "${SSH_TTY}" ]
+then
+	node $HOME/fermin/app/index.js &
+	exec startx
+fi

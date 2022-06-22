@@ -1,0 +1,5 @@
+#! /usr/bin/env sh
+
+TARGET_URL="http://localhost:3003/"
+
+exec /usr/bin/firefox -kiosk -private-window $TARGET_URL
