@@ -15,6 +15,11 @@ cd $HOME/fermin/app
 yarnpkg install
 cd -
 
+sudo mkdir -p /usr/local/lib/systemd/system/
+sudo cp fermin-server.service /usr/local/lib/systemd/system/
+sudo systemctl enable fermin-server
+rm fermin-server.service
+
 cp fermin-kiosk-xsession $HOME/.xinitrc
 chmod u+x $HOME/.xinitrc
 rm fermin-kiosk-xsession

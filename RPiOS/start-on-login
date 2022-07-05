@@ -2,6 +2,5 @@
 # start ferm|n server and kiosk on auto-login
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]
 then
-	node $HOME/fermin/app/index.js &
 	exec startx
 fi

@@ -1,0 +1,13 @@
+[Unit]
+Description=ferm|n server
+Documentation=https://github.com/redradix/ris-pantalla-interactiva/blob/master/RPiOS.README.md
+After=network.target
+
+[Service]
+Type=simple
+User=fermin
+ExecStart=/usr/bin/nodejs /home/fermin/fermin/app/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
