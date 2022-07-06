@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="$RC_SVCNAME"
+description="ferm|n server"
+supervisor="supervise-daemon"
+command="/usr/bin/node"
+command_args="/home/fermin/fermin/app/index.js"
+command_user="fermin"
+
+depend() {
+	after net
+}

@@ -18,6 +18,11 @@ cd $HOME/fermin/app
 yarnpkg install
 cd -
 
+sudo cp fermin-server.openrc /etc/init.d/fermin-server.local
+sudo chmod 755 /etc/init.d/fermin-server.local
+sudo rc-update add fermin-server.local
+rm fermin-server.openrc
+
 cp fermin-kiosk-xsession $HOME/.xinitrc
 chmod u+x $HOME/.xinitrc
 rm fermin-kiosk-xsession
