@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: fermin-app
+Upstream-Contact: Redradix S.L. <info@redradix.com>
+Source: https://github.com/redradix/ris-pantalla-interactiva
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...
